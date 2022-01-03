@@ -1,0 +1,71 @@
+[tool.poetry]
+
+name = "GnuCash Asset Allocation"
+version = "1.0.0"
+description = "Automatically rebalance portfolio in gnucash with desired asset allocation"
+
+license = "GPL3"
+
+authors = ["anguye21"]
+
+readme = "README.md"
+
+[tool.poetry.dependencies]
+
+python = "^3.6.2"
+
+# Requirements
+pyxdg = "^0.27"
+piecash = "^1.2.0"
+tabulate = "^0.8.9"
+
+[tool.poetry.dev-dependencies]
+
+# Formatters
+black = "=21.8b0"
+isort = "=5.9.3"
+
+# Linters
+mypy = "~0.812"
+pydocstyle = "^6.1"
+pylint = "~2.6"
+
+# Testing
+pytest = "^6.2"
+pytest-describe = "^2.0"
+pytest-expecter = "^2.1"
+pytest-random = "*"
+pytest-cov = "^2.12"
+pytest-mock = "^3.6.1"
+freezegun = "*"
+
+# Reports
+coveragespace = "^4.0"
+
+# Documentation
+mkdocs = "~1.2.3"
+pygments = "^2.11.1"
+
+# Tooling
+pyinstaller = "*"
+sniffer = "*"
+MacFSEvents = { version = "*", platform = "darwin" }
+pync = { version = "*", platform = "darwin" }
+ipython = "^7.12.0"
+
+[tool.poetry.scripts]
+
+gnucash_asset_allocation = "gnucash_asset_allocation.__main__:main"
+
+[tool.black]
+
+quiet = true
+
+[tool.isort]
+
+profile = "black"
+
+[build-system]
+
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
